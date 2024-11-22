@@ -22,9 +22,9 @@ def send_request():
     )
     data = response.json()
     
-    # 将 JSON 数据保存为 weibo_health.json 文件，确保中文正常显示
+    # 将 JSON 数据美化后保存为 weibo_health.json 文件，确保中文正常显示
     with open('weibo_health.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False)
+        json.dump(data, f, ensure_ascii=False, indent=4)  # 使用 indent=4 进行美化
 
     return data
 
